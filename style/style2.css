@@ -1,0 +1,69 @@
+body {
+    background-color: #222;
+    color: white;
+}
+#content>* {
+    border: 1px solid white;
+    height: calc(100vh - 150px);
+}
+
+#tchat {
+    padding: 5px;
+
+}
+
+#tchat-messages {
+    width: 70%;
+    display: inline-block;
+    border-right: 1px #222;
+    overflow-y: scroll;
+    height: calc(100% - 35px);
+}
+
+.message {
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.message.mine {
+    /* text-align: right; */
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid turquoise;
+    background-color: yellowgreen;
+    color: whitesmoke;
+    width: auto;
+    font-weight: 800;
+    margin-left: 40%;
+}
+
+.message:not(.mine) {
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid turquoise;
+    background-color: skyblue;
+    color: whitesmoke;
+    width: auto;
+    font-weight: 800;
+    margin-right: 40%;
+}
+
+#tchat-users {
+    display: inline-block;
+    width: 29.5%;
+    vertical-align: top;
+    height: calc(100% - 35px);
+    overflow-y: auto;
+    text-align: center;
+}
+.user>*{display:block;text-align: center;}
+.user{display:inline-block;text-align: center; margin: 5px;padding:5px;}
+.user>img{
+    size:auto;
+    height:150px;
+    max-width: 170px;
+}
+#footer,#banner{
+    text-align: center;
+    height: 20px;
+}

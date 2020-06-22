@@ -11,11 +11,38 @@ body{
 } 
 #banner{
     background-color: grey;
-    color:tomato;
+}
+#banner,#navbar,#footer{
+    height: 25px;
 }
 #content{
     padding:5px;
+    height:calc( 100vh - 150px);
 }
 #footer{
     text-align:center;
+}
+#banner, #footer{
+    color:tomato
+}
+.bold{
+    font-weight: 900;
+}
+
+/* Section du tchat */
+#tchat{
+    height:calc( 100% - 10px);
+    width:calc( 100% - 10px);
+    /* background-color: slateblue; */
+}
+#tchat-messages{
+    width:calc(64% - 10px);
+}
+#tchat-users{
+    width:calc(35% - 10px);
+    margin-left:10px ;
+}
+#tchat-users, #tchat-messages{
+    display: inline-block;
+    height: calc( 100% - 35px);
 }
