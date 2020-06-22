@@ -63,7 +63,11 @@ body {
     height:150px;
     max-width: 170px;
 }
-#footer,#banner{
+#footer{
     text-align: center;
     height: 20px;
+}
+#banner{
+    font-size:32pt;
+    text-align: center;
 }
