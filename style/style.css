@@ -1,0 +1,21 @@
+div{
+    border: 1px solid grey;
+    padding: 5px;
+}
+body{
+    background-color: black;
+    color:white;
+}
+#navbar{
+
+} 
+#banner{
+    background-color: grey;
+    color:tomato;
+}
+#content{
+    padding:5px;
+}
+#footer{
+    text-align:center;
+}

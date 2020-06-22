@@ -1,0 +1,23 @@
+{
+  "name": "DHL_CV_2020_06_22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/champix56/DHL_CV_2020_06_22.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/champix56/DHL_CV_2020_06_22/issues"
+  },
+  "homepage": "https://github.com/champix56/DHL_CV_2020_06_22#readme",
+  "dependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
