@@ -71,3 +71,36 @@ body {
     font-size:32pt;
     text-align: center;
 }
+
+#sender {
+    position: fixed;
+    bottom: 30px;
+    display: block;
+    left: 0;
+    right: 0;
+    height: 30px;
+    /* padding-left:10px; */
+    padding-top:5px;
+}
+#sender > form > *{
+    margin-left: 10px;
+}
+#message-outbox{
+    outline: none;width:70%;
+    background-color: rgb(71, 71, 71);
+}
+#adresse-to{
+    color:darkgrey;
+    position:absolute;
+  
+    width:calc(30% - 130px);
+    right: 100px;
+    height: 25px;
+    left: calc(70% + 20px);
+}
+#sender > form > input.submit{
+    position: absolute;
+    right:10px;
+    width:80px;
+    color: black;
+}
