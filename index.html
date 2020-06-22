@@ -35,9 +35,35 @@
         </div>
         <div id="content" >
             <div id="tchat">
-                <div id="tchat-messages">messages</div>
-                <div id="tchat-users">users</div>
-                <div id="tchat-sender">sender</div>
+                <div id="tchat-messages">
+                    <div class="message">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ratione, vel asperiores fugiat error, officia suscipit perspiciatis nobis at doloribus molestiae odio saepe quidem sed aperiam dignissimos tempore facilis sequi.
+                    </div>
+                    <div class="message mine">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ratione, vel asperiores fugiat error, officia suscipit perspiciatis nobis at doloribus molestiae odio saepe quidem sed aperiam dignissimos tempore facilis sequi.
+                    </div>
+                    <div class="message">hello</div>
+                </div>
+                <div id="tchat-users">
+                    <div class="user">
+                        <img src="/img/zoiberg.png" alt="portrait zoidberg">
+                        <div class="user-nick">Zoidberg</div>
+                    </div>
+                    <div class="user">
+                        <img src="/img/gollum.png" alt="">
+                        <div class="user-nick">Gollum</div>
+                    </div>
+                  
+                </div>
+                <div id="tchat-sender">
+                    <form action="#">
+                        <input type="text" id="message-outbox"/>
+                        <select id="adresse-to">
+                            <option value="*" selected="selected">All</option>
+                        </select>
+                        <input type="submit" value="Envoyer"/>
+                    </form>
+                </div>
             </div>
         </div>
         <div id="footer" class="bold">Orsys &copy;2020</div>
