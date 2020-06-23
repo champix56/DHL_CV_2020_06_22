@@ -1,4 +1,4 @@
-function get(ressource, id) {
+function get(callback,ressource, id) {
     var xhr = new XMLHttpRequest();
     var url='http://localhost:2500/'+ressource+(id==undefined?'':'/'+id);
     xhr.open('GET', url);
@@ -7,15 +7,12 @@ function get(ressource, id) {
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.onreadystatechange = function (evt) {
         if (evt.currentTarget.readyState < XMLHttpRequest.DONE) return;
-        var messagesInDom=document.querySelector('#tchat-messages');
         var reponseJS=JSON.parse(evt.currentTarget.response);
-        console.log(reponseJS.length);
-        console.log(reponseJS.slice(2,4));
-        reponseJS.forEach(function(elementEncours){
-            console.log(elementEncours);
-        });
-
+        callback(reponseJS);
+        
     }
     xhr.send();
 }
-get('messages');
+get(function(reponse){console.log('traitement d\'un objet',reponse)},'messages',1);
+get(function(reponse){console.log('traitement d\'une array',reponse)},'messages');
+
