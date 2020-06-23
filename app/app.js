@@ -9,6 +9,6 @@ domUser.forEach(function(element){
     element.addEventListener('click',function(evt) {
         console.log(evt);
         console.log(evt.target.innerHTML);
-        evt.target.innerHTML="Je suis pas ZOIDBERG"
+        // evt.target.innerHTML="Je suis pas ZOIDBERG"
     })
 });
