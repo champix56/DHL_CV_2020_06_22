@@ -1,0 +1,28 @@
+{
+    "messages": [
+        {"id":1,"message":"Un message du tchat", "from":"zoidberg","userId":"gollum"},
+        
+        {"id":2,"message":"Un message du tchat", "from":"zoidberg","userId":"gollum"},
+    
+        {"id":3,"message":"Un message du tchat", "from":"zoidberg","userId":"gollum"},
+    
+        {"id":4,"message":"Un message du tchat", "from":"zoidberg","userId":"gollum"},
+    
+        {"id":5,"message":"Un message du tchat", "from":"zoidberg","userId":"gollum"}    
+    ],
+    "users":[
+        {"id":"gollum", "nom":"Mr Gollum","img":"gollum.png"},
+        {"id":"zoidberg", "nom":"Dr Zoidberg","img":"zoidberg.png"},
+        {"id":"leila", "nom":"Leila","img":"leila.png"},
+        {"id":"fry", "nom":"fry","img":"fry.png"},
+        {"id":"tintin", "nom":"tintin sans milou","img":"tintin.png"},
+        {"id":"batman", "nom":"Bruce","img":"batman.png"}
+    ],
+    "tchat-infos":{
+        "clientUrl":"http://127.0.0.1/tchat",
+        "titre":"tchat.js",
+        "proprietaire":"MOI",
+        "licence":"++++++expensive"
+    }
+
+}
