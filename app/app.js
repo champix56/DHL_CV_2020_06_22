@@ -26,12 +26,15 @@ document.querySelector('form').addEventListener('submit',function(evt){
     // mauvaise pratique car suppression des objets du dom dans la balise #tchat-message
     //et aussi de tous les events associés a cette balise
     // document.querySelector('#tchat-messages').innerHTML+=evt.target[0].value;
-    addMessageInMessages({message:evt.target[0].value})
+    if(evt.target[0].value.length >0)
+    {
+        addMessageInMessages({message:evt.target[0].value});
+    }
     evt.target.reset();
    
 })
 function addMessageInMessages(objMessage,mine) {
-     //bonne ratique pour la conservation de la structure html presente dans la balise conteneur
+     //bonne pratique pour la conservation de la structure html presente dans la balise conteneur
     var message=document.createElement('div');
     message.className="message";
     if(mine===true)message.classList.add('mine');
