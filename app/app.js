@@ -12,3 +12,13 @@ domUser.forEach(function(element){
         // evt.target.innerHTML="Je suis pas ZOIDBERG"
     })
 });
+// document.querySelector('form').addEventListener('submit',(evt)=>{
+//     console.log(evt);
+//     console.log(this)
+
+// })
+document.querySelector('form').addEventListener('submit',function(evt){
+    evt.preventDefault();
+    console.log(evt);
+    console.log(evt.target[0].value,evt.target[1].value)
+})
