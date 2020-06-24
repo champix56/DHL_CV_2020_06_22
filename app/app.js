@@ -54,5 +54,27 @@ function loadMessages(idDepart){
     var rest=new RestCrud(REST_ADDRESS);
     rest.get(addMessagesInMessages,'messages');
 }
+function addUsers(users){
+    var listeUsersDom=document.querySelector('#tchat-users');
+    var selectUserSender=document.querySelector('#adresse-to');
+    users.forEach(u=>{
+        // cnstruction de la div pour un user dans la liste de users
+        var element = document.createElement('div');
+        element.className="user";
+        element.innerHTML='<img src="/img/'+u.img+'" alt="avatar de '+u.id+'"><div class="user-nick">'+u.id+'</div>';
+        listeUsersDom.append(element);
 
+        //ajout du user dans la liste du combobox(liste deroulante)
+        var optionElement=document.createElement('option')
+        optionElement.value=u.id;
+        optionElement.innerHTML=u.id;
+        selectUserSender.append(optionElement)
+    })
+}
+
+function loadUsers() {
+    var rest=new RestCrud(REST_ADDRESS);
+    rest.get(addUsers,'users');
+}
+loadUsers();
 loadMessages();
