@@ -18,9 +18,7 @@ function initEvent() {
         //et aussi de tous les events associés a cette balise
         // document.querySelector('#tchat-messages').innerHTML+=evt.target[0].value;
         if (evt.target[0].value.length > 0) {
-            var obj = { message: evt.target[0].value };
-            addMessageInMessages(obj);
-            RestCrud.get(obj)
+           saveMessage(  evt.target[0].value,evt.target[1].value);  
         }
         evt.target.reset();
 
