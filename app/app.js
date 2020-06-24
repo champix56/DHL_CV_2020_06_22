@@ -28,11 +28,13 @@ document.querySelector('form').addEventListener('submit',function(evt){
     // document.querySelector('#tchat-messages').innerHTML+=evt.target[0].value;
     if(evt.target[0].value.length >0)
     {
-        addMessageInMessages({message:evt.target[0].value});
+        var obj={message:evt.target[0].value};
+        addMessageInMessages(obj);
+        RestCrud.get(obj)
     }
     evt.target.reset();
    
-})
+});
 function addMessageInMessages(objMessage,mine) {
      //bonne pratique pour la conservation de la structure html presente dans la balise conteneur
     var message=document.createElement('div');
@@ -42,3 +44,15 @@ function addMessageInMessages(objMessage,mine) {
     //console.log(message);
     document.querySelector('#tchat-messages').append(message);
 }
+function addMessagesInMessages(messages) {
+    messages.forEach((e)=>{
+        addMessageInMessages(e);
+    })
+    
+}
+function loadMessages(idDepart){
+    var rest=new RestCrud(REST_ADDRESS);
+    rest.get(addMessagesInMessages,'messages');
+}
+
+loadMessages();
