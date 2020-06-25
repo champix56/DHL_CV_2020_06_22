@@ -1,4 +1,9 @@
 function initEvent() {
+    document.querySelector('#home-link').addEventListener('click',(evt)=>{
+        loadHome();
+        evt.target.parent.classList.add('active');
+    })
+
     var domUser = document.querySelectorAll('#tchat-users>.user');
     domUser.forEach(function (element) {
         element.addEventListener('click', function (evt) {
@@ -70,4 +75,19 @@ function addUsers(users) {
 function onloadhtml(params) {
     console.log('%cVoici les params :%s', 'color:blue;font-weight:900;font-size:30pt', params)
     return '';
+}
+
+function loadHome(){
+    fetch('/vues/home.html')
+        .then(r=>r.text())
+        .then(r=>{
+            var content=document.querySelector('#content');
+            //vidange du contenu de #content
+            for (var i = 0; i < content.children.length; i++) {
+                content.children[i].remove();   
+            }
+            //chargement de contenu pour #content
+            content.innerHTML=r;
+            content.querySelector('#home .username').innerHTML=WHO_AM_I;
+        });
 }
