@@ -1,2 +1,2 @@
-const REST_ADDRESS="http://670fe1035819.ngrok.io/";
+const REST_ADDRESS="http://localhost:2500/";
 const WHO_AM_I="alex";

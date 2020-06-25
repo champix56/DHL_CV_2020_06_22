@@ -1,7 +1,11 @@
 var RestCrud = function (baseUrl) {
-    function httpCRUD(method, ressources, callback, id, body) {
+    function httpCRUD(method, ressources, callback, id, body, queryString) {
         var xhr = new XMLHttpRequest();
-        var url = baseUrl + ressources + (id == undefined ? '' : '/' + id);
+        var url = baseUrl   + ressources 
+                            + (id == undefined ? '' : '/' + id)
+                            + (queryString == undefined ? '' : queryString)
+                            // + queryString!=undefined && queryString 
+                            ;
         xhr.open(method, url);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('Accept', 'application/json');
@@ -13,7 +17,7 @@ var RestCrud = function (baseUrl) {
         xhr.send(JSON.stringify(body));
     }
 
-    function _get(callback, ressource, id) { httpCRUD('GET', ressource, callback, id); }
+    function _get(callback, ressource, id, queryString) { httpCRUD('GET', ressource, callback, id,undefined,queryString); }
  
     function _put(callback, ressource, id, body) { httpCRUD('PUT', ressource, callback, id, body); }
     function _patch(callback, ressource, id, body) { httpCRUD('PATCH', ressource, callback, id, body); }

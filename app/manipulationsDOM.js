@@ -24,18 +24,24 @@ function initEvent() {
 
     });
 }
-initEvent();
+//initEvent();
 function addMessageInMessages(objMessage, mine) {
     //bonne pratique pour la conservation de la structure html presente dans la balise conteneur
     var message = document.createElement('div');
     message.className = "message";
-    if (mine === true) message.classList.add('mine');
+    message.id="message-"+objMessage.id;
+    if (mine === true||objMessage.from===WHO_AM_I) message.classList.add('mine');
     message.innerHTML = objMessage.message;
     //console.log(message);
     document.querySelector('#tchat-messages').append(message);
 }
+
+window.idDepartSlice=0;
+
 function addMessagesInMessages(messages) {
-    messages.forEach((e) => {
+    console.log(messages);
+    messages.forEach(function(e)  {
+        if(idDepartSlice<e.id)idDepartSlice=e.id;
         addMessageInMessages(e);
     })
 
@@ -43,12 +49,12 @@ function addMessagesInMessages(messages) {
 function addUsers(users) {
     var listeUsersDom = document.querySelector('#tchat-users');
     var selectUserSender = document.querySelector('#adresse-to');
-    users.forEach(u => {
+    users.forEach(function(u){
         // cnstruction de la div pour un user dans la liste de users
         var element = document.createElement('div');
         element.className = "user";
         element.innerHTML = '<img src="/img/' + u.img + '" alt="avatar de ' + u.id + '"><div class="user-nick">' + u.id + '</div>';
-        element.addEventListener('click', evt => {
+        element.addEventListener('click', function(evt ) {
             //  console.log(evt);
             document.querySelector('#tchat-sender select').value = u.id;
         });
