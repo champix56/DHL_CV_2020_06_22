@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "json-server": "npm run json-server -p 2500 ./db/db.json"
+    "start":"npm run lite-server | npm run json-server",
+    "lite-server":"lite-server",
+    "json-server": "json-server -p 2500 ./db/db.json"
   },
   "repository": {
     "type": "git",
